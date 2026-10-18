@@ -2891,7 +2891,7 @@ cc_prebuilt_library_shared {
                 "libnativewindow",
                 "liblog",
                 "libutils",
-                "libstagefright_foundation",
+                "libstagefright_foundation-v33",
                 "libcutils",
                 "libcamera_metadata",
                 "libmediandk",
@@ -4974,6 +4974,36 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libc++",
                 "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "liblmthermallistner",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/liblmthermallistner.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libc",
+                "libcutils",
+                "libhidlbase",
+                "libutils",
+                "libthermalclient",
+                "android.hardware.thermal@2.0",
+                "libc++",
                 "libm",
                 "libdl",
             ],
@@ -17597,7 +17627,6 @@ cc_prebuilt_library_shared {
                 "libjpeg",
                 "libpiex",
                 "libpng",
-                "libheif",
                 "libnativewindow",
                 "libEGL",
                 "libGLESv2",
@@ -17663,7 +17692,7 @@ cc_prebuilt_library_shared {
                 "vendor.display.config@2.0",
                 "libdisplayconfig.system.qti",
                 "libbinder_ndk",
-                "vendor.qti.hardware.display.config-V5-ndk",
+                "vendor.qti.hardware.display.config-V16-ndk",
                 "libc++",
                 "libc",
                 "libm",
@@ -17691,6 +17720,7 @@ cc_prebuilt_library_shared {
                 "libmmosal",
                 "liblog",
                 "libutils",
+                "libwfddisplayconfig",
                 "libc++",
                 "libc",
                 "libm",
@@ -17762,8 +17792,6 @@ cc_prebuilt_library_shared {
                 "proprietary/system_ext/lib64/libwfdmmsrc_system.so",
             ],
             shared_libs: [
-                "libgui_shim",
-                "libaudiobase",
                 "libbinder",
                 "libmmosal",
                 "liblog",
@@ -17786,6 +17814,7 @@ cc_prebuilt_library_shared {
                 "android.hardware.graphics.allocator@4.0",
                 "android.hardware.graphics.allocator-V2-ndk",
                 "libbinder_ndk",
+                "libaudiobase",
                 "libc++",
                 "libc",
                 "libm",
@@ -17810,20 +17839,15 @@ cc_prebuilt_library_shared {
                 "proprietary/system_ext/lib64/libwfdnative.so",
             ],
             shared_libs: [
-                "libinput_shim",
                 "libandroid_runtime",
-                "libui",
-                "libinput",
-                "libbinder",
                 "libgui",
+                "libui",
+                "libbinder",
+                "libinput",
                 "libnativehelper",
                 "libutils",
                 "liblog",
                 "libwfdclient",
-                "libhidlbase",
-                "libhidlmemory",
-                "android.hidl.base@1.0",
-                "android.hidl.token@1.0-utils",
                 "android.hardware.graphics.common@1.0",
                 "android.hardware.graphics.bufferqueue@1.0",
                 "android.hardware.graphics.bufferqueue@2.0",
@@ -17857,6 +17881,7 @@ cc_prebuilt_library_shared {
                 "libmmosal",
                 "libwfdcommonutils",
                 "libwfdconfigutils",
+                "libwfdmminterface",
                 "liblog",
                 "libc",
                 "libm",
@@ -17881,7 +17906,6 @@ cc_prebuilt_library_shared {
                 "proprietary/system_ext/lib64/libwfdservice.so",
             ],
             shared_libs: [
-                "libaudiobase",
                 "liblog",
                 "libutils",
                 "libcutils",
@@ -17895,6 +17919,7 @@ cc_prebuilt_library_shared {
                 "libwfdmminterface",
                 "libmedia_helper",
                 "libaudioclient",
+                "libaudiobase",
                 "libaudiofoundation",
                 "audioclient-types-aidl-cpp",
                 "android.media.audio.common.types-V5-cpp",
@@ -17902,7 +17927,7 @@ cc_prebuilt_library_shared {
                 "libwfdavenhancements",
                 "libhidlbase",
                 "vendor.qti.hardware.wifidisplaysession@1.0",
-                "vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk",
+                "vendor.qti.hardware.wifidisplaysession_aidl-V2-ndk",
                 "libbinder_ndk",
                 "libc++",
                 "libc",
@@ -18527,7 +18552,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk",
+    name: "vendor.qti.hardware.wifidisplaysession_aidl-V2-ndk",
     owner: "oneplus",
     strip: {
         none: true,
@@ -18535,7 +18560,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/system_ext/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so",
+                "proprietary/system_ext/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V2-ndk.so",
             ],
             shared_libs: [
                 "libbinder_ndk",
@@ -20373,15 +20398,6 @@ prebuilt_etc_xml {
     name: "manifest_oplus_face.xml",
     owner: "oneplus",
     src: "proprietary/odm/etc/vintf/manifest/manifest_oplus_face.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    device_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "manifest_performance_aidl.xml",
-    owner: "oneplus",
-    src: "proprietary/odm/etc/vintf/manifest/manifest_performance_aidl.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     device_specific: true,
@@ -23313,40 +23329,6 @@ cc_prebuilt_binary {
                 "libutils",
                 "libmindroid-framework",
                 "libmindroid-app",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    relative_install_path: "hw",
-    device_specific: true,
-}
-
-cc_prebuilt_binary {
-    name: "vendor-oplus-hardware-performance-V1-service",
-    owner: "oneplus",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/odm/bin/hw/vendor-oplus-hardware-performance-V1-service",
-            ],
-            shared_libs: [
-                "libprocessgroup_shim",
-                "libbase_shim",
-                "vendor.oplus.hardware.performance-V1-ndk_platform",
-                "libbase",
-                "libcutils",
-                "liblog",
-                "libbinder_ndk",
-                "libprocessgroup",
-                "libutils",
                 "libc++",
                 "libc",
                 "libm",
