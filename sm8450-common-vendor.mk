@@ -490,7 +490,6 @@ PRODUCT_PACKAGES += \
     libcvp2_1 \
     libcvpcpuRev_skel \
     libcwb_client_vendor \
-    libcwb_qcom \
     libdataitems \
     libdiag \
     libdigital-dimming \
@@ -528,7 +527,6 @@ PRODUCT_PACKAGES += \
     libhdr_tm \
     libhdrdynamic \
     libhdrdynamicootf \
-    libhistogram \
     libidl \
     libizat_client_api \
     libizat_core \
@@ -565,7 +563,6 @@ PRODUCT_PACKAGES += \
     libmemutils \
     libminkdescriptor \
     libminksocket_vendor \
-    libmm-hdcpmgr \
     libmmosal_vendor \
     libmmrtpdecoder_vendor \
     libmmrtpencoder_vendor \
@@ -639,7 +636,6 @@ PRODUCT_PACKAGES += \
     libqdma_file_agent \
     libqdp \
     libqdpr \
-    libqdutils \
     libqisl \
     libqmi \
     libqmi_cci \
@@ -673,13 +669,10 @@ PRODUCT_PACKAGES += \
     libscveObjectSegmentation \
     libscveObjectTracker \
     libscveObjectTracker_stub \
-    libsdedrm \
     libsdm-color \
     libsdm-colormgr-algo \
     libsdm-disp-vndapis \
-    libsdmcore \
     libsdmextension \
-    libsdmutils \
     libsdsprpc \
     libsecureui_svcsock \
     libsensor_calibration \
@@ -830,7 +823,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.qccvndhal@1.0-halimpl \
     vendor.qti.hardware.qccvndhal@1.0_vendor \
     vendor.qti.hardware.qconfig@1.0 \
-    vendor.qti.hardware.qdutils_disp@1.0 \
     vendor.qti.hardware.qseecom@1.0 \
     vendor.qti.hardware.qteeconnector@1.0 \
     vendor.qti.hardware.radio.am@1.0 \
@@ -1145,7 +1137,6 @@ PRODUCT_PACKAGES += \
     device_manifest_subsys.xml \
     manifest_android.hardware.drm@1.4-service.widevine.xml \
     manifest_oplus_charger_aidl.xml \
-    manifest_oplus_cwb.xml \
     manifest_oplus_face.xml \
     vendor.pixelworks.hardware.display.iris-service.xml \
     vendor.pixelworks.hardware.feature.irisfeature-service.xml \
@@ -1172,7 +1163,6 @@ PRODUCT_PACKAGES += \
     vendor.display.color@1.0-service \
     vendor.qti.hardware.alarm@1.0-service \
     vendor.qti.hardware.capabilityconfigstore@1.0-service \
-    vendor.qti.hardware.display.composer-service \
     vendor.qti.hardware.qseecom@1.0-service \
     vendor.qti.hardware.qteeconnector@1.0-service \
     vendor.qti.hardware.sensorscalibrate@1.0-service \
